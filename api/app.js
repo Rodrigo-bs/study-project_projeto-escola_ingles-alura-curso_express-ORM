@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const routes = require('./routes/index.js');
+
 class App {
     constructor() {
         this.express = express();
@@ -13,9 +15,7 @@ class App {
     }
 
     routes() {
-        this.express.get('/', (req, res) => {
-            res.send('Teste');
-        });
+        this.express.use(routes);
     }
 }
 
