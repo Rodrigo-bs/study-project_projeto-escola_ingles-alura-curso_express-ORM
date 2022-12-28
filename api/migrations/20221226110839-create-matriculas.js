@@ -13,10 +13,20 @@ module.exports = {
         type: Sequelize.STRING
       },
       estudante_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Pessoas',
+          key: 'id'
+        }
       },
       turma_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Turma',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
